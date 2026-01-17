@@ -4,72 +4,114 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tuong's page</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --md-sys-color-background: #1C1B1F;
+            --md-sys-color-on-background: #E6E1E5;
+            --md-sys-color-surface: #25232A;
+            --md-sys-color-primary: #D0BCFF;
+            --md-sys-color-secondary: #CCC2DC;
+            --md-sys-color-tertiary: #EFB8C8;
+            --md-sys-color-outline: #938F99;
+            --md-sys-color-surface-variant: #49454F;
+        }
+
         body { 
-            font-family: 'JetBrains Mono', monospace; 
+            font-family: 'Google Sans Flex', sans-serif; 
             line-height: 1.6; 
-            max-width: 800px; 
+            max-width: 600px; 
             margin: 40px auto; 
-            padding: 0 20px; 
-            color: #bdc3c7; 
-            background-color: #121212;
+            padding: 24px; 
+            color: var(--md-sys-color-on-background); 
+            background-color: var(--md-sys-color-background);
         }
-        h1 { 
-            color: #ffffff;
-            border-bottom: 2px solid #41b883; 
-            padding-bottom: 10px; 
-            font-weight: 700;
+
+        h1 { color: var(--md-sys-color-primary); font-size: 2.2rem; font-weight: 700; margin-bottom: 8px; }
+        h3 { color: var(--md-sys-color-secondary); margin-top: 32px; font-weight: 500; font-size: 1.1rem; text-transform: lowercase; }
+        p { opacity: 0.9; }
+        strong { color: var(--md-sys-color-tertiary); font-weight: 600; }
+        
+        a { color: var(--md-sys-color-primary); text-decoration: none; font-weight: 500; transition: 0.2s; border-bottom: 1px solid transparent; }
+        a:hover { border-bottom: 1px solid var(--md-sys-color-primary); }
+
+        /* Container Cards */
+        .card {
+            background: var(--md-sys-color-surface);
+            padding: 16px 20px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
-        h3 {
-            color: #41b883;
-            margin-top: 30px;
+
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { margin-bottom: 8px; }
+        li::before { content: "• "; color: var(--md-sys-color-primary); margin-right: 8px; }
+
+        /* Skills/Progress Bars */
+        .skill-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .skill-label { width: 60px; font-size: 0.9rem; }
+        .progress-bg { 
+            flex-grow: 1; 
+            height: 8px; 
+            background: var(--md-sys-color-surface-variant); 
+            border-radius: 4px; 
+            overflow: hidden; 
         }
-	strong {
-	    color: #41b883;
-	    margin-top: 30px;
-        a { 
-            color: #3498db; 
-            text-decoration: none; 
-            font-weight: 700;
-        }
-        a:hover { 
-            background-color: #ffffff;
-            tex-decoration: underline;
-        }
-	ul { list-style-type: "-> "; } 
-        .contact-list { list-style: none; padding: 0; }
-        .contact-list li { margin-bottom: 10px; }
-        hr { border: 0; border-top: 1px solid #333; margin: 40px 0; }
-        code {
-            background-color: #1e1e1e;
-            padding: 2px 5px;
-            border-radius: 4px;
-            color: #e06c75;
-	}
+        .progress-fill { height: 100%; background: var(--md-sys-color-primary); border-radius: 4px; }
+        .pct { font-size: 0.8rem; color: var(--md-sys-color-outline); width: 30px; text-align: right; }
+
+        hr { border: 0; border-top: 1px solid var(--md-sys-color-outline); margin: 40px 0 20px 0; opacity: 0.2; }
+        code { background: var(--md-sys-color-surface-variant); padding: 2px 6px; border-radius: 6px; font-family: monospace; font-size: 0.9rem; }
+        small { color: var(--md-sys-color-outline); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-    <h1>tuong's page (but hosted on vercel)</h1>
-    
-    <p>
-        Hi there! I'm <strong>tuong</strong>, you can call me "tuong" or "pofesiunal devlepeur" and i'm from <strong>Vietnam</strong>.
-    </p>
+    <h1>nc4tt's page</h1>
+    <p>Hi there! I'm <strong>nc4tt</strong> or u can call me as <strong>tuong</strong> and i'm' from <strong>Vietnam</strong>.</p>
 
-    <h3>wat i do:)</h3>
-    <ul>
-        <li><strong>kernel & android app builder:</strong> bad tho.</li>
-    </ul>
+    <h3>languages:</h3>
+    <div class="card">
+        <div class="skill-row">
+            <span class="skill-label">bash</span>
+            <div class="progress-bg"><div class="progress-fill" style="width: 1%;"></div></div>
+            <span class="pct">1%</span>
+        </div>
+        <div class="skill-row">
+            <span class="skill-label">python</span>
+            <div class="progress-bg"><div class="progress-fill" style="width: 0%;"></div></div>
+            <span class="pct">0%</span>
+        </div>
+    </div>
 
-    <h3>contact me:></h3>
-    <ul class="contact-list">
-        <li><strong>mail:</strong> <a href="mailto:anntuongg@gmail.com">anntuongg@gmail.com</a></li>
-        <li><strong>telegram:</strong> <a href="https://ncatt.t.me/">@ncatt</a></li>
-    </ul>
+    <h3>currently focusing on:</h3>
+    <div class="card">
+        <ul>
+            <li>do smth 4 fun</li>
+            <li>improve a32 kernel source, device tree, etc.</li>
+            <li>maybe more</li>
+        </ul>
+    </div>
+
+    <h3>interests:</h3>
+    <div class="card">
+        <ul>
+            <li>a32 things like device tree or kernel</li>
+            <li>custom rom</li>
+        </ul>
+    </div>
+
+    <h3>contact:</h3>
+    <div class="card">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span><strong>mail:</strong> <a href="mailto:anntuongg@gmail.com">anntuongg@gmail.com</a></span>
+            <span><strong>tg:</strong> <a href="https://ncatt.t.me/">@ncatt</a></span>
+        </div>
+    </div>
 
     <hr>
-    <p><small>Hosted on Vercel <3 — <a href="https://vercel.com">vercel.app</a></small></p>
+    <p style="text-align: center;"><small>Hosted on Vercel <3 — <a href="https://vercel.com">vercel.app</a></small></p>
 
 </body>
 </html>
